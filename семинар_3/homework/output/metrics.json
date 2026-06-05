@@ -1,0 +1,13 @@
+{
+  "total_reviews": 50,
+  "parsed_reviews": 50,
+  "total_issues": 40,
+  "ghost_quotes": 2,
+  "ghost_pct": 2.9,
+  "judge_score": 0.8,
+  "total_time_sec": 476.3,
+  "cache_hit_pct": 98.0,
+  "tokens_prompt": 63342,
+  "tokens_completion": 73527,
+  "tokens_total": 136869
+}

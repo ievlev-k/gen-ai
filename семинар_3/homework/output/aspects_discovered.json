@@ -1,0 +1,468 @@
+[
+  {
+    "author": "Leonardo Caveglia Curtil",
+    "aspects": [
+      {
+        "aspect": "overall_satisfaction",
+        "sentiment": "positive",
+        "quote": "It's got all the features and comforts you could wish for (even in the free version!), looks good, works well, got no ads; it's a no-brainer!",
+        "confidence": 0.9
+      }
+    ]
+  },
+  {
+    "author": "Jackie Hunt",
+    "aspects": [
+      {
+        "aspect": "overall_satisfaction",
+        "sentiment": "positive",
+        "quote": "It keeps me straight! Love it!!!",
+        "confidence": 0.9
+      }
+    ]
+  },
+  {
+    "author": "Loay Al Masry",
+    "aspects": [
+      {
+        "aspect": "notification_issues",
+        "sentiment": "negative",
+        "quote": "I am on premium and i don't receive whatsapp messages as reminders",
+        "confidence": 0.9
+      }
+    ]
+  },
+  {
+    "author": "Rahema Amiroden",
+    "aspects": [
+      {
+        "aspect": "overall_satisfaction",
+        "sentiment": "positive",
+        "quote": "I LOVE THIS APP, ITS VERY HELFUL FOR ME TO DO MY ROUTINE.",
+        "confidence": 0.9
+      }
+    ]
+  },
+  {
+    "author": "Vishal Sharma",
+    "aspects": [
+      {
+        "aspect": "free_version_limitations",
+        "sentiment": "negative",
+        "quote": "No reminders in free version.",
+        "confidence": 0.9
+      },
+      {
+        "aspect": "pricing_premium_complaints",
+        "sentiment": "negative",
+        "quote": "pro version is very costly",
+        "confidence": 0.9
+      }
+    ]
+  },
+  {
+    "author": "Naruto Sasuke",
+    "aspects": [
+      {
+        "aspect": "overall_satisfaction",
+        "sentiment": "positive",
+        "quote": "Very helpful for me. Thanks!",
+        "confidence": 0.9
+      }
+    ]
+  },
+  {
+    "author": "m pe",
+    "aspects": [
+      {
+        "aspect": "bugs_and_reliability",
+        "sentiment": "negative",
+        "quote": "sometimes it won't save,will just have a loading loop",
+        "confidence": 0.9
+      }
+    ]
+  },
+  {
+    "author": "leishaa k",
+    "aspects": [
+      {
+        "aspect": "free_version_limitations",
+        "sentiment": "negative",
+        "quote": "all the good feature are in premium",
+        "confidence": 0.9
+      },
+      {
+        "aspect": "pricing_premium_complaints",
+        "sentiment": "negative",
+        "quote": "why would i pay for a premium one",
+        "confidence": 0.8
+      }
+    ]
+  },
+  {
+    "author": "Santiago Rhenals",
+    "aspects": [
+      {
+        "aspect": "overall_satisfaction",
+        "sentiment": "positive",
+        "quote": "Excellent app, great habit tracker.",
+        "confidence": 0.9
+      },
+      {
+        "aspect": "bugs_and_reliability",
+        "sentiment": "negative",
+        "quote": "There are some bugs and functionalities that need to be fixed",
+        "confidence": 0.8
+      }
+    ]
+  },
+  {
+    "author": "Wazza R",
+    "aspects": [
+      {
+        "aspect": "bugs_and_reliability",
+        "sentiment": "negative",
+        "quote": "widget calendar date not automatically rolling over to next day.",
+        "confidence": 0.9
+      }
+    ]
+  },
+  {
+    "author": "Hannah Cameron",
+    "aspects": [
+      {
+        "aspect": "overall_satisfaction",
+        "sentiment": "positive",
+        "quote": "Very good app! Helps me stay organized.",
+        "confidence": 0.9
+      }
+    ]
+  },
+  {
+    "author": "Summer Barber",
+    "aspects": [
+      {
+        "aspect": "pricing_premium_complaints",
+        "sentiment": "negative",
+        "quote": "they're charging you for content they offered for free before.",
+        "confidence": 0.9
+      }
+    ]
+  },
+  {
+    "author": "Saptarshi Ghosh",
+    "aspects": [
+      {
+        "aspect": "ui_complexity",
+        "sentiment": "negative",
+        "quote": "very complicated/cumbersome UI.",
+        "confidence": 0.9
+      }
+    ]
+  },
+  {
+    "author": "Jared Rice",
+    "aspects": [
+      {
+        "aspect": "overall_satisfaction",
+        "sentiment": "positive",
+        "quote": "best organized, and it's customizable without being overly complicated",
+        "confidence": 0.8
+      }
+    ]
+  },
+  {
+    "author": "Chris Bryant",
+    "aspects": [
+      {
+        "aspect": "free_version_limitations",
+        "sentiment": "negative",
+        "quote": "free version only gives you three total lists",
+        "confidence": 0.9
+      }
+    ]
+  },
+  {
+    "author": "Bobby Fung",
+    "aspects": [
+      {
+        "aspect": "feature_requests",
+        "sentiment": "neutral",
+        "quote": "I hope the widget can adapt to system-wide dark mode.",
+        "confidence": 0.9
+      }
+    ]
+  },
+  {
+    "author": "Jelena Marusic",
+    "aspects": [
+      {
+        "aspect": "ui_complexity",
+        "sentiment": "negative",
+        "quote": "way too crowded UI",
+        "confidence": 0.9
+      },
+      {
+        "aspect": "notification_issues",
+        "sentiment": "negative",
+        "quote": "I started receiving email notifications at least once a day",
+        "confidence": 0.9
+      }
+    ]
+  },
+  {
+    "author": "Masha Kravets",
+    "aspects": [
+      {
+        "aspect": "overall_satisfaction",
+        "sentiment": "positive",
+        "quote": "I really like this app",
+        "confidence": 0.9
+      }
+    ]
+  },
+  {
+    "author": "James L. Cody",
+    "aspects": [
+      {
+        "aspect": "overall_satisfaction",
+        "sentiment": "positive",
+        "quote": "Love it, incredibly useful",
+        "confidence": 0.9
+      },
+      {
+        "aspect": "feature_requests",
+        "sentiment": "neutral",
+        "quote": "could open a website",
+        "confidence": 0.9
+      }
+    ]
+  },
+  {
+    "author": "ANTO REVANTH",
+    "aspects": [
+      {
+        "aspect": "free_version_limitations",
+        "sentiment": "negative",
+        "quote": "only useful when you are using premium",
+        "confidence": 0.9
+      }
+    ]
+  },
+  {
+    "author": "Thea Park",
+    "aspects": [
+      {
+        "aspect": "data_sync_and_account",
+        "sentiment": "negative",
+        "quote": "This app is connected to my other account... And I'm not able to change it.",
+        "confidence": 0.9
+      }
+    ]
+  },
+  {
+    "author": "Stealth Tactics",
+    "aspects": [
+      {
+        "aspect": "feature_requests",
+        "sentiment": "negative",
+        "quote": "you can't make achievements for reach (x) level overall like giving yourself an achievement for reaching level 5 as a hero",
+        "confidence": 0.8
+      }
+    ]
+  },
+  {
+    "author": "alan varghese",
+    "aspects": [
+      {
+        "aspect": "ui_complexity",
+        "sentiment": "negative",
+        "quote": "This app is to complicated",
+        "confidence": 0.9
+      }
+    ]
+  },
+  {
+    "author": "Nick Pcp",
+    "aspects": [
+      {
+        "aspect": "feature_requests",
+        "sentiment": "neutral",
+        "quote": "A 'postpone' option is needed.",
+        "confidence": 0.9
+      }
+    ]
+  },
+  {
+    "author": "Rob Lowe",
+    "aspects": [
+      {
+        "aspect": "feature_requests",
+        "sentiment": "neutral",
+        "quote": "Some integrated examples would be nice also an inventory of items to help pick rewards",
+        "confidence": 0.8
+      }
+    ]
+  },
+  {
+    "author": "David Tan",
+    "aspects": [
+      {
+        "aspect": "bugs_and_reliability",
+        "sentiment": "negative",
+        "quote": "Hari Raya Puasa was on 5/6 but calendar show 4/6.",
+        "confidence": 0.9
+      }
+    ]
+  },
+  {
+    "author": "Ankit Mehta",
+    "aspects": [
+      {
+        "aspect": "bugs_and_reliability",
+        "sentiment": "negative",
+        "quote": "Location reminders don't work in medium power saving mode",
+        "confidence": 0.9
+      }
+    ]
+  },
+  {
+    "author": "Michael C.",
+    "aspects": [
+      {
+        "aspect": "overall_satisfaction",
+        "sentiment": "positive",
+        "quote": "Most feature rich free version I've tried",
+        "confidence": 0.9
+      }
+    ]
+  },
+  {
+    "author": "DeDora Bayne",
+    "aspects": [
+      {
+        "aspect": "overall_satisfaction",
+        "sentiment": "positive",
+        "quote": "Visually appealing.",
+        "confidence": 0.7
+      }
+    ]
+  },
+  {
+    "author": "Kelsey Abbott",
+    "aspects": [
+      {
+        "aspect": "overall_satisfaction",
+        "sentiment": "positive",
+        "quote": "great at keeping you on schedule!",
+        "confidence": 0.9
+      }
+    ]
+  },
+  {
+    "author": "Kimberly McCoy",
+    "aspects": [
+      {
+        "aspect": "notification_issues",
+        "sentiment": "negative",
+        "quote": "if I click on my notification that it opens the event to save or delete I stead of just looking at it",
+        "confidence": 0.9
+      }
+    ]
+  },
+  {
+    "author": "Hydee Fisher",
+    "aspects": [
+      {
+        "aspect": "feature_requests",
+        "sentiment": "neutral",
+        "quote": "Wish it had a widget for Android though.",
+        "confidence": 0.9
+      }
+    ]
+  },
+  {
+    "author": "Cretinous Martyr",
+    "aspects": [
+      {
+        "aspect": "pricing_premium_complaints",
+        "sentiment": "negative",
+        "quote": "Very expensive for a simple app",
+        "confidence": 0.9
+      },
+      {
+        "aspect": "free_version_limitations",
+        "sentiment": "negative",
+        "quote": "Only tracks 5 habits? Lame.",
+        "confidence": 0.9
+      },
+      {
+        "aspect": "data_sync_and_account",
+        "sentiment": "negative",
+        "quote": "worthless for transferring data to a new phone",
+        "confidence": 0.9
+      }
+    ]
+  },
+  {
+    "author": "Marzana Ahmed",
+    "aspects": [
+      {
+        "aspect": "data_sync_and_account",
+        "sentiment": "negative",
+        "quote": "I got a new phone and can't go back ... all my trees are gone",
+        "confidence": 0.9
+      }
+    ]
+  },
+  {
+    "author": "Iamacrazydude",
+    "aspects": [
+      {
+        "aspect": "bugs_and_reliability",
+        "sentiment": "negative",
+        "quote": "Change of days in app is a major problem.",
+        "confidence": 0.7
+      }
+    ]
+  },
+  {
+    "author": "ccvcx chcvh",
+    "aspects": [
+      {
+        "aspect": "feature_requests",
+        "sentiment": "neutral",
+        "quote": "Why not find Arabic language",
+        "confidence": 0.9
+      }
+    ]
+  },
+  {
+    "author": "Sree Chakrika",
+    "aspects": [
+      {
+        "aspect": "pricing_premium_complaints",
+        "sentiment": "negative",
+        "quote": "upgrade to Pro version... instead you can show some ads instead of paying for it",
+        "confidence": 0.8
+      },
+      {
+        "aspect": "feature_requests",
+        "sentiment": "neutral",
+        "quote": "you can show some ads instead of paying for it",
+        "confidence": 0.8
+      }
+    ]
+  },
+  {
+    "author": "Vijay Vitekar",
+    "aspects": [
+      {
+        "aspect": "bugs_and_reliability",
+        "sentiment": "negative",
+        "quote": "Now not working after pie /EMUI 9.0.0",
+        "confidence": 0.9
+      }
+    ]
+  }
+]

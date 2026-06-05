@@ -1,0 +1,746 @@
+[
+  {
+    "author": "Leonardo Caveglia Curtil",
+    "rating": 5,
+    "review_date": "2020-10-24 19:03:44",
+    "device": null,
+    "issues": [],
+    "positives": [
+      "It's got all the features and comforts you could wish for (even in the free version!), looks good, works well, got no ads"
+    ],
+    "competitor_mentions": []
+  },
+  {
+    "author": "Jackie Hunt",
+    "rating": 5,
+    "review_date": "2020-07-18 23:08:27",
+    "device": null,
+    "issues": [],
+    "positives": [
+      "I use this planner on a daily basis. It keeps me straight! Love it!!!"
+    ],
+    "competitor_mentions": []
+  },
+  {
+    "author": "Loay Al Masry",
+    "rating": 3,
+    "review_date": "2020-07-01 07:59:07",
+    "device": null,
+    "issues": [
+      {
+        "category": "reliability",
+        "severity": 3,
+        "quote": "I am on premium and i don't receive whatsapp messages as reminders"
+      }
+    ],
+    "positives": [],
+    "competitor_mentions": []
+  },
+  {
+    "author": "Rahema Amiroden",
+    "rating": 4,
+    "review_date": "2020-06-12 08:18:42",
+    "device": null,
+    "issues": [],
+    "positives": [
+      "I LOVE THIS APP, ITS VERY HELFUL FOR ME TO DO MY ROUTINE."
+    ],
+    "competitor_mentions": []
+  },
+  {
+    "author": "Vishal Sharma",
+    "rating": 2,
+    "review_date": "2020-08-31 08:36:03",
+    "device": null,
+    "issues": [
+      {
+        "category": "price",
+        "severity": 4,
+        "quote": "No reminders in free version"
+      },
+      {
+        "category": "price",
+        "severity": 4,
+        "quote": "pro version is very costly"
+      }
+    ],
+    "positives": [],
+    "competitor_mentions": [
+      "todoist"
+    ]
+  },
+  {
+    "author": "Naruto Sasuke",
+    "rating": 5,
+    "review_date": "2020-10-24 11:49:30",
+    "device": null,
+    "issues": [],
+    "positives": [
+      "Very helpful for me. Thanks!"
+    ],
+    "competitor_mentions": []
+  },
+  {
+    "author": "m pe",
+    "rating": 2,
+    "review_date": "2019-07-02 08:35:13",
+    "device": null,
+    "issues": [
+      {
+        "category": "reliability",
+        "severity": 4,
+        "quote": "latest update has not fixes bugs that occur every day"
+      },
+      {
+        "category": "reliability",
+        "severity": 5,
+        "quote": "sometimes it won't save,will just have a loading loop"
+      },
+      {
+        "category": "design",
+        "severity": 2,
+        "quote": "Some basic things are not customizable like the calendar starting on Monday or the date format"
+      },
+      {
+        "category": "reliability",
+        "severity": 3,
+        "quote": "doesn't keep track of activity data correctly"
+      }
+    ],
+    "positives": [],
+    "competitor_mentions": []
+  },
+  {
+    "author": "B",
+    "rating": 1,
+    "review_date": "2019-10-25 05:26:38",
+    "device": null,
+    "issues": [
+      {
+        "category": "design",
+        "severity": 4,
+        "quote": "there was no way to go and see which days I checked it or not"
+      }
+    ],
+    "positives": [],
+    "competitor_mentions": []
+  },
+  {
+    "author": "leishaa k",
+    "rating": 2,
+    "review_date": "2020-08-04 09:01:21",
+    "device": null,
+    "issues": [
+      {
+        "category": "price",
+        "severity": 3,
+        "quote": "all the good feature are in premium"
+      }
+    ],
+    "positives": [],
+    "competitor_mentions": []
+  },
+  {
+    "author": "jayesh patel",
+    "rating": 1,
+    "review_date": "2020-10-10 14:39:39",
+    "device": null,
+    "issues": [
+      {
+        "category": "design",
+        "severity": 4,
+        "quote": "no task information on screen"
+      }
+    ],
+    "positives": [],
+    "competitor_mentions": []
+  },
+  {
+    "author": "Santiago Rhenals",
+    "rating": 4,
+    "review_date": "2019-06-28 05:56:13",
+    "device": null,
+    "issues": [
+      {
+        "category": "reliability",
+        "severity": 2,
+        "quote": "There are some bugs and functionalities that need to be fixed"
+      }
+    ],
+    "positives": [
+      "Excellent app, great habit tracker. I've found in this app an exciting way to be productive!"
+    ],
+    "competitor_mentions": []
+  },
+  {
+    "author": "Wazza R",
+    "rating": 3,
+    "review_date": "2020-05-22 08:25:42",
+    "device": null,
+    "issues": [
+      {
+        "category": "reliability",
+        "severity": 3,
+        "quote": "widget calendar date not automatically rolling over to next day"
+      },
+      {
+        "category": "reliability",
+        "severity": 3,
+        "quote": "widget will not reload when the phone is turned back on"
+      }
+    ],
+    "positives": [],
+    "competitor_mentions": []
+  },
+  {
+    "author": "Hannah Cameron",
+    "rating": 4,
+    "review_date": "2020-03-20 02:55:27",
+    "device": null,
+    "issues": [],
+    "positives": [
+      "Very good app! Helps me stay organized."
+    ],
+    "competitor_mentions": []
+  },
+  {
+    "author": "Summer Barber",
+    "rating": 2,
+    "review_date": "2020-10-15 20:19:17",
+    "device": null,
+    "issues": [
+      {
+        "category": "price",
+        "severity": 4,
+        "quote": "Now, those trees are locked behind a \"premium\" wall... they're charging you for content they offered for free before."
+      }
+    ],
+    "positives": [
+      "It felt really rewarding to have focused long enough to buy a cool new plant you've been saving up for"
+    ],
+    "competitor_mentions": []
+  },
+  {
+    "author": "Saptarshi Ghosh",
+    "rating": 3,
+    "review_date": "2020-04-22 14:11:09",
+    "device": null,
+    "issues": [
+      {
+        "category": "design",
+        "severity": 3,
+        "quote": "very complicated/cumbersome UI. You have multiple places where the tasks can get hidden & then you'll forget"
+      }
+    ],
+    "positives": [
+      "Good app"
+    ],
+    "competitor_mentions": [
+      "Google Keep"
+    ]
+  },
+  {
+    "author": "Jared Rice",
+    "rating": 4,
+    "review_date": "2020-07-29 04:03:04",
+    "device": null,
+    "issues": [],
+    "positives": [
+      "Of all the check list apps I've tried out, this one is the best organized, and it's customizable without being overly complicated."
+    ],
+    "competitor_mentions": []
+  },
+  {
+    "author": "Chris Bryant",
+    "rating": 2,
+    "review_date": "2020-02-28 04:21:15",
+    "device": null,
+    "issues": [
+      {
+        "category": "price",
+        "severity": 2,
+        "quote": "free version only gives you three total lists"
+      }
+    ],
+    "positives": [
+      "Works well"
+    ],
+    "competitor_mentions": []
+  },
+  {
+    "author": "Bobby Fung",
+    "rating": 4,
+    "review_date": "2020-09-13 23:36:28",
+    "device": null,
+    "issues": [],
+    "positives": [],
+    "competitor_mentions": []
+  },
+  {
+    "author": "Jelena Marusic",
+    "rating": 1,
+    "review_date": "2020-06-21 15:33:43",
+    "device": null,
+    "issues": [
+      {
+        "category": "design",
+        "severity": 3,
+        "quote": "too crowded UI"
+      },
+      {
+        "category": "ads",
+        "severity": 4,
+        "quote": "I started receiving email notifications at least once a day about a task it automatically creates for the user"
+      }
+    ],
+    "positives": [],
+    "competitor_mentions": []
+  },
+  {
+    "author": "Masha Kravets",
+    "rating": 5,
+    "review_date": "2020-10-24 19:55:29",
+    "device": null,
+    "issues": [],
+    "positives": [
+      "I really like this app",
+      "It's the cutest thing I've ever seen and it helps me a lot"
+    ],
+    "competitor_mentions": []
+  },
+  {
+    "author": "James L. Cody",
+    "rating": 5,
+    "review_date": "2020-09-23 19:04:26",
+    "device": null,
+    "issues": [],
+    "positives": [
+      "Love it, incredibly useful and I feel like a superhero growing in a gamification style system that tracks my lifestyle and productivity... Great product."
+    ],
+    "competitor_mentions": []
+  },
+  {
+    "author": "ANTO REVANTH",
+    "rating": 1,
+    "review_date": "2020-08-03 17:13:37",
+    "device": null,
+    "issues": [
+      {
+        "category": "price",
+        "severity": 4,
+        "quote": "only useful when you are using premium"
+      }
+    ],
+    "positives": [],
+    "competitor_mentions": []
+  },
+  {
+    "author": "fatma şahin",
+    "rating": 1,
+    "review_date": "2020-07-03 16:47:09",
+    "device": null,
+    "issues": [
+      {
+        "category": "reliability",
+        "severity": 5,
+        "quote": "I couldn't use it"
+      }
+    ],
+    "positives": [],
+    "competitor_mentions": []
+  },
+  {
+    "author": "Tripti Tripathi",
+    "rating": 5,
+    "review_date": "2020-10-26 17:09:21",
+    "device": null,
+    "issues": [],
+    "positives": [
+      "Good"
+    ],
+    "competitor_mentions": []
+  },
+  {
+    "author": "Thea Park",
+    "rating": 2,
+    "review_date": "2020-08-31 09:10:07",
+    "device": null,
+    "issues": [
+      {
+        "category": "reliability",
+        "severity": 4,
+        "quote": "This app is connected to my other account...??? And I'm not able to change it."
+      }
+    ],
+    "positives": [
+      "The app is nice"
+    ],
+    "competitor_mentions": []
+  },
+  {
+    "author": "Stealth Tactics",
+    "rating": 4,
+    "review_date": "2017-12-24 11:43:31",
+    "device": null,
+    "issues": [
+      {
+        "category": "design",
+        "severity": 2,
+        "quote": "the achievement tab, it's pretty lackluster, you can't make achievements for reach (x) level overall"
+      }
+    ],
+    "positives": [
+      "Great app"
+    ],
+    "competitor_mentions": []
+  },
+  {
+    "author": "Deepak kumar",
+    "rating": 3,
+    "review_date": "2019-06-02 18:41:02",
+    "device": null,
+    "issues": [],
+    "positives": [
+      "it 's good"
+    ],
+    "competitor_mentions": []
+  },
+  {
+    "author": "alan varghese",
+    "rating": 1,
+    "review_date": "2018-12-08 20:28:01",
+    "device": null,
+    "issues": [
+      {
+        "category": "design",
+        "severity": 3,
+        "quote": "This app is to complicated"
+      }
+    ],
+    "positives": [],
+    "competitor_mentions": []
+  },
+  {
+    "author": "Nunya Businezz",
+    "rating": 1,
+    "review_date": "2020-08-25 17:30:47",
+    "device": null,
+    "issues": [],
+    "positives": [],
+    "competitor_mentions": []
+  },
+  {
+    "author": "Nick Pcp",
+    "rating": 3,
+    "review_date": "2020-05-25 04:37:20",
+    "device": null,
+    "issues": [
+      {
+        "category": "design",
+        "severity": 2,
+        "quote": "A \"postpone\" option is needed."
+      },
+      {
+        "category": "design",
+        "severity": 2,
+        "quote": "would like option for completed habits to hide for the day, and option to edit categories names, icons and colours"
+      }
+    ],
+    "positives": [
+      "Very good job."
+    ],
+    "competitor_mentions": []
+  },
+  {
+    "author": "judith",
+    "rating": 1,
+    "review_date": "2019-09-07 01:30:02",
+    "device": null,
+    "issues": [
+      {
+        "category": "design",
+        "severity": 4,
+        "quote": "doesn't show all events for the day; doesn't show events in designated colours (all look the same); doesn't show repeat events!"
+      }
+    ],
+    "positives": [
+      "Great idea"
+    ],
+    "competitor_mentions": []
+  },
+  {
+    "author": "Rob Lowe",
+    "rating": 4,
+    "review_date": "2020-07-09 03:35:00",
+    "device": null,
+    "issues": [],
+    "positives": [],
+    "competitor_mentions": []
+  },
+  {
+    "author": "A Google user",
+    "rating": 2,
+    "review_date": "2019-01-15 10:43:03",
+    "device": null,
+    "issues": [],
+    "positives": [],
+    "competitor_mentions": []
+  },
+  {
+    "author": "Maria Merilo",
+    "rating": 5,
+    "review_date": "2020-09-04 18:20:08",
+    "device": null,
+    "issues": [],
+    "positives": [
+      "Great"
+    ],
+    "competitor_mentions": []
+  },
+  {
+    "author": "Dimas Aditya",
+    "rating": 5,
+    "review_date": "2020-10-25 19:11:31",
+    "device": null,
+    "issues": [],
+    "positives": [
+      "So cool.."
+    ],
+    "competitor_mentions": []
+  },
+  {
+    "author": "David Tan",
+    "rating": 2,
+    "review_date": "2019-05-22 18:48:41",
+    "device": null,
+    "issues": [
+      {
+        "category": "reliability",
+        "severity": 3,
+        "quote": "a few Singapore holiday was on the wrong date.ie Hari Raya Puasa was on 5/6 but calendar show 4/6. Deepavali 27/10 was show wrongly on 26/10"
+      }
+    ],
+    "positives": [
+      "Is a good calender"
+    ],
+    "competitor_mentions": []
+  },
+  {
+    "author": "Ankit Mehta",
+    "rating": 1,
+    "review_date": "2020-09-13 12:10:39",
+    "device": null,
+    "issues": [
+      {
+        "category": "reliability",
+        "severity": 4,
+        "quote": "Location reminders don't work in medium power saving mode"
+      },
+      {
+        "category": "support",
+        "severity": 3,
+        "quote": "all I got in reply was a copy paste solution and a trouble shoot link."
+      }
+    ],
+    "positives": [],
+    "competitor_mentions": []
+  },
+  {
+    "author": "prashik Gaikwad",
+    "rating": 5,
+    "review_date": "2020-10-25 23:02:00",
+    "device": null,
+    "issues": [],
+    "positives": [
+      "Nice app"
+    ],
+    "competitor_mentions": []
+  },
+  {
+    "author": "Michael C.",
+    "rating": 4,
+    "review_date": "2020-09-22 18:42:18",
+    "device": null,
+    "issues": [],
+    "positives": [
+      "Most feature rich free version I've tried of other to do list type apps. Interface takes some getting used to but great features and everything seems to be working."
+    ],
+    "competitor_mentions": []
+  },
+  {
+    "author": "DeDora Bayne",
+    "rating": 3,
+    "review_date": "2020-05-26 22:17:58",
+    "device": null,
+    "issues": [],
+    "positives": [
+      "Visually appealing."
+    ],
+    "competitor_mentions": []
+  },
+  {
+    "author": "Kelsey Abbott",
+    "rating": 5,
+    "review_date": "2020-09-07 18:30:56",
+    "device": null,
+    "issues": [],
+    "positives": [
+      "Just starting using it and I can already tell how great it is at keeping you on schedule! I've done schedules before, but with this App, it makes it so much easier to stay on track! :)"
+    ],
+    "competitor_mentions": []
+  },
+  {
+    "author": "Kimberly McCoy",
+    "rating": 3,
+    "review_date": "2020-06-09 23:30:03",
+    "device": null,
+    "issues": [
+      {
+        "category": "design",
+        "severity": 2,
+        "quote": "I don't like that if I click on my notification that it opens the event to save or delete i stead of just looking at it or giving me the option to complete."
+      },
+      {
+        "category": "design",
+        "severity": 2,
+        "quote": "not being able to change the time I want an all day reminder"
+      }
+    ],
+    "positives": [
+      "love the layout and look"
+    ],
+    "competitor_mentions": []
+  },
+  {
+    "author": "Hydee Fisher",
+    "rating": 3,
+    "review_date": "2019-09-15 19:46:45",
+    "device": "Android",
+    "issues": [
+      {
+        "category": "design",
+        "severity": 2,
+        "quote": "Wish it had a widget for Android though."
+      }
+    ],
+    "positives": [
+      "Love it so far."
+    ],
+    "competitor_mentions": []
+  },
+  {
+    "author": "Cretinous Martyr",
+    "rating": 1,
+    "review_date": "2019-12-31 09:20:58",
+    "device": null,
+    "issues": [
+      {
+        "category": "price",
+        "severity": 4,
+        "quote": "Very expensive for a simple app, and quite useless without buying the premium."
+      },
+      {
+        "category": "price",
+        "severity": 3,
+        "quote": "Only tracks 5 habits? Lame."
+      },
+      {
+        "category": "reliability",
+        "severity": 5,
+        "quote": "Sounds like even if I bought premium it would be worthless for transferring data to a new phone as the app claims"
+      }
+    ],
+    "positives": [],
+    "competitor_mentions": []
+  },
+  {
+    "author": "Marzana Ahmed",
+    "rating": 3,
+    "review_date": "2020-09-18 03:14:18",
+    "device": null,
+    "issues": [
+      {
+        "category": "reliability",
+        "severity": 5,
+        "quote": "I got a new phone and can't go back to the moment where I had so many trees planted all my trees are gone"
+      }
+    ],
+    "positives": [
+      "I love this app"
+    ],
+    "competitor_mentions": []
+  },
+  {
+    "author": "Dibyaranjan Pati",
+    "rating": 4,
+    "review_date": "2020-08-10 23:52:32",
+    "device": null,
+    "issues": [],
+    "positives": [
+      "Nice"
+    ],
+    "competitor_mentions": []
+  },
+  {
+    "author": "Iamacrazydude",
+    "rating": 2,
+    "review_date": "2019-08-02 14:09:36",
+    "device": null,
+    "issues": [
+      {
+        "category": "reliability",
+        "severity": 3,
+        "quote": "Change of days in app is a major problem."
+      }
+    ],
+    "positives": [],
+    "competitor_mentions": []
+  },
+  {
+    "author": "ccvcx chcvh",
+    "rating": 3,
+    "review_date": "2020-05-16 02:10:22",
+    "device": null,
+    "issues": [
+      {
+        "category": "design",
+        "severity": 2,
+        "quote": "Why not find Arabic language"
+      }
+    ],
+    "positives": [],
+    "competitor_mentions": []
+  },
+  {
+    "author": "Sree Chakrika",
+    "rating": 4,
+    "review_date": "2020-10-13 12:17:09",
+    "device": null,
+    "issues": [
+      {
+        "category": "price",
+        "severity": 3,
+        "quote": "I am not able to open other spieces of trees. It says upgrade to Pro version..."
+      }
+    ],
+    "positives": [
+      "This is a very nice app. I loved it."
+    ],
+    "competitor_mentions": []
+  },
+  {
+    "author": "Vijay Vitekar",
+    "rating": 2,
+    "review_date": "2019-05-12 13:42:03",
+    "device": "EMUI 9.0.0",
+    "issues": [
+      {
+        "category": "reliability",
+        "severity": 5,
+        "quote": "Now not working after pie /EMUI 9.0.0"
+      }
+    ],
+    "positives": [],
+    "competitor_mentions": []
+  }
+]
