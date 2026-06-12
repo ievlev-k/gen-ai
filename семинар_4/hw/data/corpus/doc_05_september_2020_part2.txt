@@ -1,0 +1,1187 @@
+# Сообщения чата ITMO Programming languages — 2020-09
+
+
+--- Igor 🐱 Jirkov (2020-09-18) ---
+
+https://doodle.com/en/
+
+
+--- salvoroni (2020-09-18) ---
+
+Спасибо!
+
+
+--- Леонид Манатов (2020-09-19) ---
+
+Для дистанта ссылка для выбора времени (время примерное, тк не получилось там под время пар подогнать на 100%): 
+https://doodle.com/poll/ayaieavvzxf2738m
+
+чтобы время выбрать нужно себя добавить тут на плюсик
+
+и обратите внимание что вторника там нет
+
+
+--- Igor 🐱 Jirkov (2020-09-19) ---
+
+Я готов и на вечера тоже, смотрите как удобно.
+
+
+--- Леонид Манатов (2020-09-19) ---
+
+я вторник убрал, тк там военная кафедра
+
+
+--- Igor 🐱 Jirkov (2020-09-19) ---
+
+Ок, я посмотрю сегодня-завтра и выберем. Предлагаю такой формат:
+- делайте задания из двух практик чтобы влиться в тему, при возникновении вопросов не стесняйтесь писать мне или сюда
+- на встречах защищаете лабы
+
+
+--- salvoroni (2020-09-19) ---
+
+А можно будет защитить 2 лабы?
+
+Может успею к тому времени вторую сделать
+
+
+--- Spark (2020-09-19) ---
+
+Хочу защищать лабы
+Но я отчислился((0
+
+
+--- Igor 🐱 Jirkov (2020-09-19) ---
+
+Хоть три. Вариантов нет, все восемь лаб есть в книжке
+
+(Третья это уже си)
+
+Добавил журнал в закреп
+https://docs.google.com/spreadsheets/d/1WAw1c4t_Gf-dQkNriWhb4p4hvVny7W7mtPLunDOiVFM/edit?usp=sharing
+
+
+--- Anton Surkis (2020-09-21) ---
+
+Листинг 5-31 на странице 83 не верный, на самом деле эти объектники без ошибок не линкуются
+
+Вроде как из .rodata без PIC тоже читать нельзя
+
+
+--- Igor 🐱 Jirkov (2020-09-21) ---
+
+у тебя mac?
+
+
+--- Anton Surkis (2020-09-21) ---
+
+Нет, Linux Manjaro
+
+[asurkis@asurkis-manjaro sandbox]$ cat libso.asm
+extern _GLOBAL_OFFSET_TABLE_
+
+global func:function
+
+section .rodata
+message: db 'Shared object wrote this', 10, 0
+
+section .text
+func:
+  mov rax, 1
+  mov rdi, 1
+  mov rsi, message
+  mov rdx, 14
+  syscall
+  ret
+
+[asurkis@asurkis-manjaro sandbox]$ nasm -f elf64 libso.asm
+[asurkis@asurkis-manjaro sandbox]$ ld -shared -o libso.so libso.o --dynamic-linker=/lib64/ld-linux-x86-64.so.2 
+ld: libso.o: предупреждение: перемещение в разделе только для чтения «.text»
+ld: warning: creating DT_TEXTREL in a shared object
+
+
+--- Igor 🐱 Jirkov (2020-09-21) ---
+
+а скинь что потом тебе readelf скажет
+
+(у меня всё как собиралось прекрасно так и собирается. Пробовал на  ubuntu/debian, а сейчас у меня nixos)
+
+
+--- Anton Surkis (2020-09-21) ---
+
+[asurkis@asurkis-manjaro sandbox]$ readelf -a libso.o
+Заголовок ELF:
+  Magic:   7f 45 4c 46 02 01 01 00 00 00 00 00 00 00 00 00 
+  Класс:                             ELF64
+  Данные:                            дополнение до 2, от младшего к старшему
+  Version:                           1 (current)
+  OS/ABI:                            UNIX - System V
+  Версия ABI:                        0
+  Тип:                               REL (Перемещаемый файл)
+  Машина:                            Advanced Micro Devices X86-64
+  Версия:                            0x1
+  Адрес точки входа:                 0x0
+  Начало заголовков программы:       0 (байт в файле)
+  Начало заголовков раздела:         64 (байт в файле)
+  Флаги:                             0x0
+  Size of this header:               64 (bytes)
+  Size of program headers:           0 (bytes)
+  Number of program headers:         0
+  Size of section headers:           64 (bytes)
+  Number of section headers:         7
+  Section header string table index: 3
+
+Заголовки разделов:
+  [Нм] Имя               Тип              Адрес             Смещение
+       Размер            Разм.Ent         Флаги  Ссылк Инфо  Выравн
+  [ 0]                   NULL             0000000000000000  00000000
+       0000000000000000  0000000000000000           0     0     0
+  [ 1] .rodata           PROGBITS         0000000000000000  00000200
+       000000000000001a  0000000000000000   A       0     0     4
+  [ 2] .text             PROGBITS         0000000000000000  00000220
+       000000000000001c  0000000000000000  AX       0     0     16
+  [ 3] .shstrtab         STRTAB           0000000000000000  00000240
+       0000000000000034  0000000000000000           0     0     1
+  [ 4] .symtab           SYMTAB           0000000000000000  00000280
+       0000000000000090  0000000000000018           5     5     8
+  [ 5] .strtab           STRTAB           0000000000000000  00000310
+       0000000000000018  0000000000000000           0     0     1
+  [ 6] .rela.text        RELA             0000000000000000  00000330
+       0000000000000018  0000000000000018           4     2     8
+Обозначения флагов:
+  W (запись), A (назнач), X (исполняемый), M (слияние), S (строки),
+  I (инфо), L (порядок ссылок), O (требуется дополнительная работа ОС),
+  G (группа), T (TLS), C (сжат), x (неизвестно), o (специфич. для ОС),
+  E (исключён),
+  l (большой), p (processor specific)
+
+В этом файле нет групп разделов.
+
+В этом файле нет заголовков программы.
+
+В этом файле нет динамического раздела.
+
+Раздел перемещения '.rela.text' по смещению 0x330 содержится 1 элемент:
+  Смещение        Инфо           Тип            Знач.симв.    Имя симв. + Addend
+00000000000c  000200000001 R_X86_64_64       0000000000000000 .rodata + 0
+
+Декодирование разделов развёртывания для машинного типа Advanced Micro Devices X86-64 пока не поддерживается.
+
+Таблица символов «.symtab» содержит 6 элементов:
+   Чис:    Знач           Разм Тип     Связ   Vis      Индекс имени
+     0: 0000000000000000     0 NOTYPE  LOCAL  DEFAULT  UND 
+     1: 0000000000000000     0 FILE    LOCAL  DEFAULT  ABS libso.asm
+     2: 0000000000000000     0 SECTION LOCAL  DEFAULT    1 
+     3: 0000000000000000     0 SECTION LOCAL  DEFAULT    2 
+     4: 0000000000000000     0 NOTYPE  LOCAL  DEFAULT    1 message
+     5: 0000000000000000     0 FUNC    GLOBAL DEFAULT    2 func
+
+В этом файле не найдена информация о версии.
+
+Заголовки программы:
+  Тип            Смещ.              Вирт.адр           Физ.адр
+                 Рзм.фйл            Рзм.пм              Флаги  Выравн
+  LOAD           0x0000000000000000 0x0000000000000000 0x0000000000000000
+                 0x0000000000000220 0x0000000000000220  R      0x1000
+  LOAD           0x0000000000001000 0x0000000000001000 0x0000000000001000
+                 0x000000000000001c 0x000000000000001c  R E    0x1000
+  LOAD           0x0000000000002000 0x0000000000002000 0x0000000000002000
+                 0x0000000000000020 0x0000000000000020  R      0x1000
+  LOAD           0x0000000000002f00 0x0000000000003f00 0x0000000000003f00
+                 0x0000000000000100 0x0000000000000100  RW     0x1000
+  DYNAMIC        0x0000000000002f00 0x0000000000003f00 0x0000000000003f00
+                 0x0000000000000100 0x0000000000000100  RW     0x8
+  GNU_RELRO      0x0000000000002f00 0x0000000000003f00 0x0000000000003f00
+                 0x0000000000000100 0x0000000000000100  R      0x1
+
+ Соответствие раздел-сегмент:
+  Сегмент Разделы...
+   00     .hash .gnu.hash .dynsym .dynstr .rela.dyn 
+   01     .text 
+   02     .rodata 
+   03     .dynamic 
+   04     .dynamic 
+   05     .dynamic 
+
+Динамический раздел со смещением 0x2f00 содержит 12 элементов:
+  Тег                Тип                  Имя/Знач
+ 0x0000000000000004 (HASH)               0x190
+ 0x000000006ffffef5 (GNU_HASH)           0x1a8
+ 0x0000000000000005 (STRTAB)             0x200
+ 0x0000000000000006 (SYMTAB)             0x1d0
+ 0x000000000000000a (STRSZ)              6 (байт)
+ 0x000000000000000b (SYMENT)             24 (байт)
+ 0x0000000000000007 (RELA)               0x208
+ 0x0000000000000008 (RELASZ)             24 (байт)
+ 0x0000000000000009 (RELAENT)            24 (байт)
+ 0x0000000000000016 (TEXTREL)            0x0
+ 0x000000006ffffff9 (RELACOUNT)          1
+ 0x0000000000000000 (NULL)               0x0
+
+Раздел перемещения '.rela.dyn' по смещению 0x208 содержится 1 элемент:
+  Смещение        Инфо           Тип            Знач.симв.    Имя симв. + Addend
+00000000100c  000000000008 R_X86_64_RELATIVE                    2000
+
+Декодирование разделов развёртывания для машинного типа Advanced Micro Devices X86-64 пока не поддерживается.
+
+Таблица символов «.dynsym» содержит 2 элемента:
+   Чис:    Знач           Разм Тип     Связ   Vis      Индекс имени
+     0: 0000000000000000     0 NOTYPE  LOCAL  DEFAULT  UND 
+     1: 0000000000001000     0 FUNC    GLOBAL DEFAULT    6 func
+
+Таблица символов «.symtab» содержит 15 элементов:
+   Чис:    Знач           Разм Тип     Связ   Vis      Индекс имени
+     0: 0000000000000000     0 NOTYPE  LOCAL  DEFAULT  UND 
+     1: 0000000000000190     0 SECTION LOCAL  DEFAULT    1 
+     2: 00000000000001a8     0 SECTION LOCAL  DEFAULT    2 
+     3: 00000000000001d0     0 SECTION LOCAL  DEFAULT    3 
+     4: 0000000000000200     0 SECTION LOCAL  DEFAULT    4 
+     5: 0000000000000208     0 SECTION LOCAL  DEFAULT    5 
+     6: 0000000000001000     0 SECTION LOCAL  DEFAULT    6 
+     7: 0000000000002000     0 SECTION LOCAL  DEFAULT    7 
+     8: 0000000000002020     0 SECTION LOCAL  DEFAULT    8 
+     9: 0000000000003f00     0 SECTION LOCAL  DEFAULT    9 
+    10: 0000000000000000     0 FILE    LOCAL  DEFAULT  ABS libso.asm
+    11: 0000000000002000     0 NOTYPE  LOCAL  DEFAULT    7 message
+    12: 0000000000000000     0 FILE    LOCAL  DEFAULT  ABS 
+    13: 0000000000003f00     0 OBJECT  LOCAL  DEFAULT    9 _DYNAMIC
+    14: 0000000000001000     0 FUNC    GLOBAL DEFAULT    6 func
+
+Гистограмма длины списка областей памяти (всего 1 область):
+ Длина Число        % от всего  Охват
+      0  0          (  0.0%)
+      1  1          (100.0%)    100.0%
+
+Histogram for `.gnu.hash' bucket list length (total of 2 buckets):
+ Длина Число        % от всего  Охват
+      0  1          ( 50.0%)
+      1  1          ( 50.0%)    100.0%
+
+В этом файле не найдена информация о версии.
+
+[asurkis@asurkis-manjaro sandbox]$ readelf -a libso.so
+Заголовок ELF:
+  Magic:   7f 45 4c 46 02 01 01 00 00 00 00 00 00 00 00 00 
+  Класс:                             ELF64
+  Данные:                            дополнение до 2, от младшего к старшему
+  Version:                           1 (current)
+  OS/ABI:                            UNIX - System V
+  Версия ABI:                        0
+  Тип:                               DYN (Совм. исп. объектный файл)
+  Машина:                            Advanced Micro Devices X86-64
+  Версия:                            0x1
+  Адрес точки входа:                 0x1000
+  Начало заголовков программы:       64 (байт в файле)
+  Начало заголовков раздела:         12784 (байт в файле)
+  Флаги:                             0x0
+  Size of this header:               64 (bytes)
+  Size of program headers:           56 (bytes)
+  Number of program headers:         6
+  Size of section headers:           64 (bytes)
+  Number of section headers:         13
+  Section header string table index: 12
+
+Заголовки разделов:
+  [Нм] Имя               Тип              Адрес             Смещение
+       Размер            Разм.Ent         Флаги  Ссылк Инфо  Выравн
+  [ 0]                   NULL             0000000000000000  00000000
+       0000000000000000  0000000000000000           0     0     0
+  [ 1] .hash             HASH             0000000000000190  00000190
+       0000000000000014  0000000000000004   A       3     0     8
+  [ 2] .gnu.hash         GNU_HASH         00000000000001a8  000001a8
+       0000000000000024  0000000000000000   A       3     0     8
+  [ 3] .dynsym           DYNSYM           00000000000001d0  000001d0
+       0000000000000030  0000000000000018   A       4     1     8
+  [ 4] .dynstr           STRTAB           0000000000000200  00000200
+       0000000000000006  0000000000000000   A       0     0     1
+  [ 5] .rela.dyn         RELA             0000000000000208  00000208
+       0000000000000018  0000000000000018   A       3     0     8
+  [ 6] .text             PROGBITS         0000000000001000  00001000
+       000000000000001c  0000000000000000  AX       0     0     16
+  [ 7] .rodata           PROGBITS         0000000000002000  00002000
+       000000000000001a  0000000000000000   A       0     0     4
+  [ 8] .eh_frame         PROGBITS         0000000000002020  00002020
+       0000000000000000  0000000000000000   A       0     0     8
+  [ 9] .dynamic          DYNAMIC          0000000000003f00  00002f00
+       0000000000000100  0000000000000010  WA       4     0     8
+  [10] .symtab           SYMTAB           0000000000000000  00003000
+       0000000000000168  0000000000000018          11    14     8
+  [11] .strtab           STRTAB           0000000000000000  00003168
+       0000000000000021  0000000000000000           0     0     1
+  [12] .shstrtab         STRTAB           0000000000000000  00003189
+       0000000000000060  0000000000000000           0     0     1
+Обозначения флагов:
+  W (запись), A (назнач), X (исполняемый), M (слияние), S (строки),
+  I (инфо), L (порядок ссылок), O (требуется дополнительная работа ОС),
+  G (группа), T (TLS), C (сжат), x (неизвестно), o (специфич. для ОС),
+  E (исключён),
+  l (большой), p (processor specific)
+
+В этом файле нет групп разделов.
+
+
+--- Igor 🐱 Jirkov (2020-09-21) ---
+
+а можно ещё export LC_ALL=C перед этим?
+
+
+--- Anton Surkis (2020-09-21) ---
+
+Секундочку
+
+
+--- Igor 🐱 Jirkov (2020-09-21) ---
+
+имя симв. + addend
+
+
+--- Anton Surkis (2020-09-21) ---
+
+[asurkis@asurkis-manjaro sandbox]$ readelf -a libso.o
+ELF Header:
+  Magic:   7f 45 4c 46 02 01 01 00 00 00 00 00 00 00 00 00 
+  Class:                             ELF64
+  Data:                              2's complement, little endian
+  Version:                           1 (current)
+  OS/ABI:                            UNIX - System V
+  ABI Version:                       0
+  Type:                              REL (Relocatable file)
+  Machine:                           Advanced Micro Devices X86-64
+  Version:                           0x1
+  Entry point address:               0x0
+  Start of program headers:          0 (bytes into file)
+  Start of section headers:          64 (bytes into file)
+  Flags:                             0x0
+  Size of this header:               64 (bytes)
+  Size of program headers:           0 (bytes)
+  Number of program headers:         0
+  Size of section headers:           64 (bytes)
+  Number of section headers:         7
+  Section header string table index: 3
+
+Section Headers:
+  [Nr] Name              Type             Address           Offset
+       Size              EntSize          Flags  Link  Info  Align
+  [ 0]                   NULL             0000000000000000  00000000
+       0000000000000000  0000000000000000           0     0     0
+  [ 1] .rodata           PROGBITS         0000000000000000  00000200
+       000000000000001a  0000000000000000   A       0     0     4
+  [ 2] .text             PROGBITS         0000000000000000  00000220
+       000000000000001c  0000000000000000  AX       0     0     16
+  [ 3] .shstrtab         STRTAB           0000000000000000  00000240
+       0000000000000034  0000000000000000           0     0     1
+  [ 4] .symtab           SYMTAB           0000000000000000  00000280
+       0000000000000090  0000000000000018           5     5     8
+  [ 5] .strtab           STRTAB           0000000000000000  00000310
+       0000000000000018  0000000000000000           0     0     1
+  [ 6] .rela.text        RELA             0000000000000000  00000330
+       0000000000000018  0000000000000018           4     2     8
+Key to Flags:
+  W (write), A (alloc), X (execute), M (merge), S (strings), I (info),
+  L (link order), O (extra OS processing required), G (group), T (TLS),
+  C (compressed), x (unknown), o (OS specific), E (exclude),
+  l (large), p (processor specific)
+
+There are no section groups in this file.
+
+There are no program headers in this file.
+
+There is no dynamic section in this file.
+
+Relocation section '.rela.text' at offset 0x330 contains 1 entry:
+  Offset          Info           Type           Sym. Value    Sym. Name + Addend
+00000000000c  000200000001 R_X86_64_64       0000000000000000 .rodata + 0
+
+The decoding of unwind sections for machine type Advanced Micro Devices X86-64 is not currently supported.
+
+Symbol table '.symtab' contains 6 entries:
+   Num:    Value          Size Type    Bind   Vis      Ndx Name
+     0: 0000000000000000     0 NOTYPE  LOCAL  DEFAULT  UND 
+     1: 0000000000000000     0 FILE    LOCAL  DEFAULT  ABS libso.asm
+     2: 0000000000000000     0 SECTION LOCAL  DEFAULT    1 
+     3: 0000000000000000     0 SECTION LOCAL  DEFAULT    2 
+     4: 0000000000000000     0 NOTYPE  LOCAL  DEFAULT    1 message
+     5: 0000000000000000     0 FUNC    GLOBAL DEFAULT    2 func
+
+No version information found in this file.
+
+[asurkis@asurkis-manjaro sandbox]$ readelf -a libso.so
+ELF Header:
+  Magic:   7f 45 4c 46 02 01 01 00 00 00 00 00 00 00 00 00 
+  Class:                             ELF64
+  Data:                              2's complement, little endian
+  Version:                           1 (current)
+  OS/ABI:                            UNIX - System V
+  ABI Version:                       0
+  Type:                              DYN (Shared object file)
+  Machine:                           Advanced Micro Devices X86-64
+  Version:                           0x1
+  Entry point address:               0x1000
+  Start of program headers:          64 (bytes into file)
+  Start of section headers:          12784 (bytes into file)
+  Flags:                             0x0
+  Size of this header:               64 (bytes)
+  Size of program headers:           56 (bytes)
+  Number of program headers:         6
+  Size of section headers:           64 (bytes)
+  Number of section headers:         13
+  Section header string table index: 12
+
+Section Headers:
+  [Nr] Name              Type             Address           Offset
+       Size              EntSize          Flags  Link  Info  Align
+  [ 0]                   NULL             0000000000000000  00000000
+       0000000000000000  0000000000000000           0     0     0
+  [ 1] .hash             HASH             0000000000000190  00000190
+       0000000000000014  0000000000000004   A       3     0     8
+  [ 2] .gnu.hash         GNU_HASH         00000000000001a8  000001a8
+       0000000000000024  0000000000000000   A       3     0     8
+  [ 3] .dynsym           DYNSYM           00000000000001d0  000001d0
+       0000000000000030  0000000000000018   A       4     1     8
+  [ 4] .dynstr           STRTAB           0000000000000200  00000200
+       0000000000000006  0000000000000000   A       0     0     1
+  [ 5] .rela.dyn         RELA             0000000000000208  00000208
+       0000000000000018  0000000000000018   A       3     0     8
+  [ 6] .text             PROGBITS         0000000000001000  00001000
+       000000000000001c  0000000000000000  AX       0     0     16
+  [ 7] .rodata           PROGBITS         0000000000002000  00002000
+       000000000000001a  0000000000000000   A       0     0     4
+  [ 8] .eh_frame         PROGBITS         0000000000002020  00002020
+       0000000000000000  0000000000000000   A       0     0     8
+  [ 9] .dynamic          DYNAMIC          0000000000003f00  00002f00
+       0000000000000100  0000000000000010  WA       4     0     8
+  [10] .symtab           SYMTAB           0000000000000000  00003000
+       0000000000000168  0000000000000018          11    14     8
+  [11] .strtab           STRTAB           0000000000000000  00003168
+       0000000000000021  0000000000000000           0     0     1
+  [12] .shstrtab         STRTAB           0000000000000000  00003189
+       0000000000000060  0000000000000000           0     0     1
+Key to Flags:
+  W (write), A (alloc), X (execute), M (merge), S (strings), I (info),
+  L (link order), O (extra OS processing required), G (group), T (TLS),
+  C (compressed), x (unknown), o (OS specific), E (exclude),
+  l (large), p (processor specific)
+
+There are no section groups in this file.
+
+Program Headers:
+  Type           Offset             VirtAddr           PhysAddr
+                 FileSiz            MemSiz              Flags  Align
+  LOAD           0x0000000000000000 0x0000000000000000 0x0000000000000000
+                 0x0000000000000220 0x0000000000000220  R      0x1000
+  LOAD           0x0000000000001000 0x0000000000001000 0x0000000000001000
+                 0x000000000000001c 0x000000000000001c  R E    0x1000
+  LOAD           0x0000000000002000 0x0000000000002000 0x0000000000002000
+                 0x0000000000000020 0x0000000000000020  R      0x1000
+  LOAD           0x0000000000002f00 0x0000000000003f00 0x0000000000003f00
+                 0x0000000000000100 0x0000000000000100  RW     0x1000
+  DYNAMIC        0x0000000000002f00 0x0000000000003f00 0x0000000000003f00
+                 0x0000000000000100 0x0000000000000100  RW     0x8
+  GNU_RELRO      0x0000000000002f00 0x0000000000003f00 0x0000000000003f00
+                 0x0000000000000100 0x0000000000000100  R      0x1
+
+ Section to Segment mapping:
+  Segment Sections...
+   00     .hash .gnu.hash .dynsym .dynstr .rela.dyn 
+   01     .text 
+   02     .rodata 
+   03     .dynamic 
+   04     .dynamic 
+   05     .dynamic 
+
+Dynamic section at offset 0x2f00 contains 12 entries:
+  Tag        Type                         Name/Value
+ 0x0000000000000004 (HASH)               0x190
+ 0x000000006ffffef5 (GNU_HASH)           0x1a8
+ 0x0000000000000005 (STRTAB)             0x200
+ 0x0000000000000006 (SYMTAB)             0x1d0
+ 0x000000000000000a (STRSZ)              6 (bytes)
+ 0x000000000000000b (SYMENT)             24 (bytes)
+ 0x0000000000000007 (RELA)               0x208
+ 0x0000000000000008 (RELASZ)             24 (bytes)
+ 0x0000000000000009 (RELAENT)            24 (bytes)
+ 0x0000000000000016 (TEXTREL)            0x0
+ 0x000000006ffffff9 (RELACOUNT)          1
+ 0x0000000000000000 (NULL)               0x0
+
+Relocation section '.rela.dyn' at offset 0x208 contains 1 entry:
+  Offset          Info           Type           Sym. Value    Sym. Name + Addend
+00000000100c  000000000008 R_X86_64_RELATIVE                    2000
+
+The decoding of unwind sections for machine type Advanced Micro Devices X86-64 is not currently supported.
+
+Symbol table '.dynsym' contains 2 entries:
+   Num:    Value          Size Type    Bind   Vis      Ndx Name
+     0: 0000000000000000     0 NOTYPE  LOCAL  DEFAULT  UND 
+     1: 0000000000001000     0 FUNC    GLOBAL DEFAULT    6 func
+
+Symbol table '.symtab' contains 15 entries:
+   Num:    Value          Size Type    Bind   Vis      Ndx Name
+     0: 0000000000000000     0 NOTYPE  LOCAL  DEFAULT  UND 
+     1: 0000000000000190     0 SECTION LOCAL  DEFAULT    1 
+     2: 00000000000001a8     0 SECTION LOCAL  DEFAULT    2 
+     3: 00000000000001d0     0 SECTION LOCAL  DEFAULT    3 
+     4: 0000000000000200     0 SECTION LOCAL  DEFAULT    4 
+     5: 0000000000000208     0 SECTION LOCAL  DEFAULT    5 
+     6: 0000000000001000     0 SECTION LOCAL  DEFAULT    6 
+     7: 0000000000002000     0 SECTION LOCAL  DEFAULT    7 
+     8: 0000000000002020     0 SECTION LOCAL  DEFAULT    8 
+     9: 0000000000003f00     0 SECTION LOCAL  DEFAULT    9 
+    10: 0000000000000000     0 FILE    LOCAL  DEFAULT  ABS libso.asm
+    11: 0000000000002000     0 NOTYPE  LOCAL  DEFAULT    7 message
+    12: 0000000000000000     0 FILE    LOCAL  DEFAULT  ABS 
+    13: 0000000000003f00     0 OBJECT  LOCAL  DEFAULT    9 _DYNAMIC
+    14: 0000000000001000     0 FUNC    GLOBAL DEFAULT    6 func
+
+Histogram for bucket list length (total of 1 bucket):
+ Length  Number     % of total  Coverage
+      0  0          (  0.0%)
+      1  1          (100.0%)    100.0%
+
+Histogram for `.gnu.hash' bucket list length (total of 2 buckets):
+ Length  Number     % of total  Coverage
+      0  1          ( 50.0%)
+      1  1          ( 50.0%)    100.0%
+
+No version information found in this file.
+
+[asurkis@asurkis-manjaro sandbox]$ ld -shared -o libso.so libso.o --dynamic-linker=/lib64/ld-linux-x86-64.so.2 
+ld: libso.o: warning: relocation in read-only section `.text'
+ld: warning: creating DT_TEXTREL in a shared object
+
+Мои попытки понять, что именно тут не так, пока не привели ни к чему
+
+
+--- Igor 🐱 Jirkov (2020-09-21) ---
+
+раз (твой справа)
+
+это .o
+
+
+--- Anton Surkis (2020-09-21) ---
+
+Т.е. получается он не сохранил _GLOBAL_OFFSET_TABLE_
+При этом ссылка на этот символ в ассемблерном файле есть
+
+
+--- Igor 🐱 Jirkov (2020-09-21) ---
+
+два (libso.so,  твой справа)
+
+
+--- Anton Surkis (2020-09-21) ---
+
+При этом сам код и вызов NASM вроде как такие же, как в книжке
+
+extern _GLOBAL_OFFSET_TABLE_
+
+global func:function
+
+section .rodata
+message: db 'Shared object wrote this', 10, 0
+
+section .text
+func:
+  mov rax, 1
+  mov rdi, 1
+  mov rsi, message
+  mov rdx, 14
+  syscall
+  ret
+
+nasm -f elf64 libso.asm
+
+
+--- Igor 🐱 Jirkov (2020-09-21) ---
+
+да, это так
+
+здесь есть одна тонкость, о которой я не хотел говорить до 15ой главы )) Проблема в том, что секция .text тут содержит релокации в силу того, что ссылается на message.  Проблема не в .rodata. 
+Иными словами, мы при загрузке секции .text в свободное место адресного пространства должны её пропатчить, указав адрес message. Это, вообще, плохая практика, и она не использует по-настоящему GOT.
+
+
+--- Anton Surkis (2020-09-21) ---
+
+Но тут то и сами символы в сгенерированном объектнике не те, которые должны быть, получается. Разве это следствие, а не причина?
+
+
+--- Igor 🐱 Jirkov (2020-09-21) ---
+
+нет, то, что ты видел, это предупреждения линкера о том, что есть релокации в .text, что плохо
+
+символы действительно другие, возможно, кто-то из цепочки просто вырезал GOT потому что она не используется
+
+(плохо потому что многие бонусы от использования динамических библиотек таким образом убиваются)
+
+Мы к этому ещё вернёмся, но если не терпится, есть 15-ая глава и миникурс https://www.youtube.com/watch?v=vdSxH202ASU
+
+
+--- Anton Surkis (2020-09-21) ---
+
+Тут еще есть проблема, что уже для вызывающего файла линкер выдает файл, который баш притворяется, что не видит. Сейчас покажу вывод
+
+[asurkis@asurkis-manjaro sandbox]$ cat libso_main.asm
+global _start
+extern func
+
+section .text
+_start:
+  mov rdi, 10
+  call func
+  mov rdi, rax
+  mov rax, 60
+  syscall
+
+[asurkis@asurkis-manjaro sandbox]$ nasm -f elf64 libso_main.asm
+[asurkis@asurkis-manjaro sandbox]$ ld -o libso_main libso_main.o -d libso.so
+[asurkis@asurkis-manjaro sandbox]$ ./libso_main
+bash: ./libso_main: No such file or directory
+
+
+--- Igor 🐱 Jirkov (2020-09-21) ---
+
+сделай ldd libso_main
+
+
+--- Anton Surkis (2020-09-21) ---
+
+[asurkis@asurkis-manjaro sandbox]$ ldd libso_main
+        linux-vdso.so.1 (0x00007fff5bd20000)
+        libso.so => not found
+Не очень понятно на самом деле, с чего он not found, если прямо здесь же лежит
+
+
+--- Igor 🐱 Jirkov (2020-09-21) ---
+
+скорее всего твой динамический загрузчик находится по другому адресу, нежели /lib64/ld-linux-x86-64.so.2
+
+а
+
+тут надо установить LD_LIBRARY_PATH=.
+
+по умолчании в текущей директории библиотеки не ищутся
+
+
+--- Anton Surkis (2020-09-21) ---
+
+[asurkis@asurkis-manjaro sandbox]$ export LD_LIBRARY_PATH=.
+[asurkis@asurkis-manjaro sandbox]$ ldd libso_main
+        linux-vdso.so.1 (0x00007ffde93db000)
+        libso.so => ./libso.so (0x00007f95ef501000)
+[asurkis@asurkis-manjaro sandbox]$ ./libso_main
+bash: ./libso_main: No such file or directory
+
+Библиотеку он находит теперь, хорошо
+
+Но все равно "не видит" сам файл
+
+
+--- Igor 🐱 Jirkov (2020-09-21) ---
+
+а загрузчика всё ещё нет
+
+чтобы пофиксить посмотри ldd $(which bash)
+
+там должна одна из ссылок вести на динамический загрузчик
+
+когда собираешь артефакты, укажи правильный путь к нему вместо /lib64/ld-linux-x86-64.so.2
+
+
+--- Anton Surkis (2020-09-21) ---
+
+[asurkis@asurkis-manjaro sandbox]$ ldd $(which bash)
+        linux-vdso.so.1 (0x00007ffe1118b000)
+        libreadline.so.8 => /usr/lib/libreadline.so.8 (0x00007fd3f4cff000)
+        libdl.so.2 => /usr/lib/libdl.so.2 (0x00007fd3f4cf9000)
+        libc.so.6 => /usr/lib/libc.so.6 (0x00007fd3f4b30000)
+        libncursesw.so.6 => /usr/lib/libncursesw.so.6 (0x00007fd3f4abf000)
+        /lib64/ld-linux-x86-64.so.2 => /usr/lib64/ld-linux-x86-64.so.2 (0x00007fd3f4e7e000)
+Т.е. заменить здесь --dynamic-linker на /usr/lib64/ld-linux-x86-64.so.2?
+
+[asurkis@asurkis-manjaro sandbox]$ ld -shared -o libso.so libso.o --dynamic-linker=/usr/lib64/ld-linux-x86-64.so.2 
+ld: libso.o: warning: relocation in read-only section `.text'
+ld: warning: creating DT_TEXTREL in a shared object
+[asurkis@asurkis-manjaro sandbox]$ ld -o libso_main libso_main.o -d libso.so
+[asurkis@asurkis-manjaro sandbox]$ ./libso_main
+bash: ./libso_main: No such file or directory
+
+
+--- Igor 🐱 Jirkov (2020-09-21) ---
+
+LD_LIBRARY_PATH всё ещё правильный?
+
+если да, то надо уже вживую смотреть, телемедицина не работает (
+
+
+--- Anton Surkis (2020-09-21) ---
+
+[asurkis@asurkis-manjaro sandbox]$ echo $LD_LIBRARY_PATH
+.
+
+Ладно, возможно, на Debian под WSL это сработает лучше, надо проверить. Все равно настольный комп я в ИТМО не принесу
+
+При этом если убрать чтение из message (которое в .rodata), то все как раз линкуется без предупреждений и запускается. Правда с нулевым выхлопом, т.к. сообщение то в stdout не вывести
+
+
+--- Alexander B. (2020-09-21) ---
+
+а echo $? после второго вызова ld что говорит?
+
+он вообще слинковался?
+
+
+--- Anton Surkis (2020-09-21) ---
+
+[asurkis@asurkis-manjaro sandbox]$ ld -o libso_main libso_main.o -d libso.so
+[asurkis@asurkis-manjaro sandbox]$ echo $?
+0
+
+Сам libso_main то как раз линкуется спокойно. Но не запускается
+
+
+--- Alexander B. (2020-09-21) ---
+
+ls -l libso_main
+
+
+--- Anton Surkis (2020-09-21) ---
+
+[asurkis@asurkis-manjaro sandbox]$ ls -l libso_main
+-rwxr-xr-x 1 asurkis asurkis 13968 Sep 21 21:36 libso_main
+
+Вот кстати под WSL оно точно так же "не видит" исполняемый файл, но при линковке не ругается вообще
+
+
+--- Alexander B. (2020-09-21) ---
+
+а, у тебя кажется dynamic-linker не в той команде указан
+
+надо не когда линкуешь .so-шку, а когда линкуешь исполняемый файл ставить
+
+
+--- Anton Surkis (2020-09-21) ---
+
+Но подожди, в книжке то к сошке
+
+Сейчас попытаюсь, конечно
+
+Хм
+
+И таки это действительно заработало
+
+Благодарю
+
+
+--- Anton Changalidis (2020-09-21) ---
+
+кажется, вторая лаба обещает быть интересной)
+
+
+--- Даниил Толстов (2020-09-21) ---
+
+нет
+
+Упс, случайно :)
+
+
+--- Igor 🐱 Jirkov (2020-09-21) ---
+
+да, баг. Исправил бы, но...
+
+Там этого всего нет :)
+
+
+--- Sergei Zhmylove (2020-09-22) ---
+
+Ох уж этот ваш линекс
+
+
+--- Spark (2020-09-22) ---
+
+тьфу
+
+
+--- Sergei Zhmylove (2020-09-22) ---
+
+Ох уж этот ваш линекс, позволяет относительные пути в ld_library_path
+
+
+--- Igor 🐱 Jirkov (2020-09-22) ---
+
+laissez-faire
+
+
+--- Spark (2020-09-22) ---
+
+Когда-то давнь встречал, что баш может ругаться на несуществующий файл, если нет прав на исполнение :) но могу бредить
+
+
+--- Sergei Zhmylove (2020-09-22) ---
+
+Лол, меня всегда радует, когда обвиняют в этом bash
+
+
+--- Igor 🐱 Jirkov (2020-09-22) ---
+
+Рому надо зачислить и отчислить ещё раз
+
+
+--- Sergei Zhmylove (2020-09-22) ---
+
+Шо, в третий раз что ли?
+
+
+--- Igor 🐱 Jirkov (2020-09-22) ---
+
+third time is a charm
+
+
+--- Spark (2020-09-22) ---
+
+ЗАЧЕМ
+
+
+--- Sergei Zhmylove (2020-09-22) ---
+
+Ты же вроде решил в МФТИ идти?
+
+Это я ослышался?
+
+И это был mit?
+
+
+--- Spark (2020-09-22) ---
+
+Пока я решил поспать
+
+А так - хз, может быть куда нибудь в мск
+Хотя такими темпами к нг я вернусь в Питер )00
+
+Уже нет той интриги, третий раз уже скучно будет
+
+
+--- Igor 🐱 Jirkov (2020-09-22) ---
+
+соскучился по физике вестимо
+
+
+--- Spark (2020-09-22) ---
+
+Не, по приколу думал попробовать в Баумена, но со сроками (к счастью) не успел
+
+
+--- Sergei Zhmylove (2020-09-22) ---
+
+doctrina de errata?
+
+
+--- Igor 🐱 Jirkov (2020-09-22) ---
+
+(Только третий курс)
+
+Помните, мы обещали больше интересных факультативов в сотрудничестве с компаниями? На следующей неделе стартует первый из новых корпоративных факультативов — "Архитектура компьютера" для третьего курса  от наших партнёров Syntacore.  Система команд, архитектура RISC-V, микроархитектура, организация памяти, высокопроизводительные процессоры, ядро SCR1. Будет вести моя хорошая приятельница (а когда-то наша студентка) Екатерина Березина @katerinabirch.
+Планируются лекции в zoom и практические задания. 
+Записаться можно тут: https://forms.gle/2U7AzQaQCVfJ6We18
+
+После голосования определится время: вечер среды или вечер пятницы.
+
+
+--- Anton Changalidis (2020-09-22) ---
+
+Можно ли им заменить предмет "архитектура компьютера", который тоже в этом семе, и, пока, так скажем, нудноват?
+
+
+--- salvoroni (2020-09-22) ---
+
+@igorjirkov добрый день
+А на 2 лабу будут какие-то тесты как было в 1?
+
+
+--- Igor 🐱 Jirkov (2020-09-22) ---
+
+Сразу скажу: так как факультатив такой раньше не вели, мы не гарантируем никакие перезачеты. Но если курс пройдет хорошо я буду бороться за то,  чтобы этот курс зачли как  "архитектуру компьютера" на третьем курсе.
+
+если сделаешь — будут :)
+
+
+--- Дима (2020-09-22) ---
+
+Это который у Тропченко-старшего?
+
+
+--- Ivan Bratchikov (2020-09-22) ---
+
+да
+
+
+--- Дима (2020-09-22) ---
+
+А лабы у Тропченко-младшего?
+
+
+--- Dawin York (2020-09-22) ---
+
+Да
+
+
+--- Дима (2020-09-22) ---
+
+Поздравляю, у вас +1 абсолютно странный предмет.
+
+
+--- Spark (2020-09-22) ---
+
+++
+
+
+--- Anton Changalidis (2020-09-22) ---
+
+Поздравляю, у вас +1 абсолютно странный предмет.
+
+дааа, максимально странный непонятный, лекции с листочка(((. Поляков v2.0(
+
+
+--- Дима (2020-09-22) ---
+
+Если не/повезёт, он у вас и в 7 семестре будет!
+
+Вообще да, проблема с лекторами, которые офигенно знают предмет, но фигово его рассказывают, встречаются.
+
+
+--- Anton Changalidis (2020-09-22) ---
+
+А что там?
+
+в 7 семестре
+
+
+--- Дима (2020-09-22) ---
+
+Обработка цифровых сигналов.
+
+
+--- Pavel Balakshin (2020-09-22) ---
+
+Цифровая обработка сигналов.
+
+
+--- Anton Changalidis (2020-09-22) ---
+
+эх, я думал там будет какой-нибудь машлерн)))
+
+
+--- Igor 🐱 Jirkov (2020-09-22) ---
+
+Вообще обработка сигналов это интересно, на этом многое в компьютерном зрении построено
+
+но пока условный opencv не пощупаешь не поймёшь это (а на курсе обработки сигналов не пощупаешь)
+
+
+--- Anton Changalidis (2020-09-23) ---
+
+а в книжке не подразумевалось, что они есть? там просто ссылка на сайт апресс и там не сильно понятно
+
+
+--- Igor 🐱 Jirkov (2020-09-23) ---
+
+подразумевалось, но я не сделал
+
+
+--- Anton Changalidis (2020-09-23) ---
+
+тогда будем ручками))
+
+
+--- Igor 🐱 Jirkov (2020-09-23) ---
+
+там и не сделать настолько же полезные тесты, как в первой лабе, мне кажется
+
+
+--- Dawin York (2020-09-23) ---
+
+Вопрос: как выделяется память для строк? Если точнее, что содержится в метке
+Например:
+str: db 'hello, world'
+
+
+--- Igor 🐱 Jirkov (2020-09-23) ---
+
+Это область глобальных переменных. Все они присутствуют в исполняемом файле, а потом "копируются" в память загрузчиком при запуске программы
+
+
+--- Behruz Mansurov (2020-09-23) ---
+
+Сегодня будет прием лаб для дистанта?
+
+
+--- Sergei Zhmylove (2020-09-23) ---
+
+man gdb /x
+
+
+--- salvoroni (2020-09-23) ---
+
+А будет приём лаб для дистанта? В пятницу мы теряем уже вторую пару (
+
+
+--- Sergei Zhmylove (2020-09-23) ---
+
+Зато можно в универ не ходить, удобно
+
+
+--- salvoroni (2020-09-23) ---
+
+Звучит не очень обнадеживающе
+
+А хотя и правда классно
+
+
+--- Spark (2020-09-23) ---
+
+Подтверждаю, классно
+
+
+--- Sergei Zhmylove (2020-09-23) ---
+
+Как это? Вполне себе trade off: вольготная жизнь в обмен на полсеместра лаб
+
+
+--- Igor 🐱 Jirkov (2020-09-24) ---
+
+Дистант: завтра в 15 часов готов принять первую лабу. Для тех кто не может устроим ещё встречу
+
+
+--- salvoroni (2020-09-24) ---
+
+А до сколько будет занятие?
+
+У нас по расписанию пара в 17 будет просто
+
+
+--- Igor 🐱 Jirkov (2020-09-24) ---
+
+https://t.me/joinchat/Aeg0rRw6Pl3QKEBF_X4Lew
+ссылка для обсуждения вопросов дистанта
+
+ну я думаю быстро поговорим с каждым желающим (коих было трое в дудле)
+
+@legolazzzz
+
+кто у нас ещё удалённо
+
+
+--- Леонид Манатов (2020-09-24) ---
+
+@bot12313, только у него сейчас 4 утра
+
+может до 15 проснется )
+
+
+--- Pavel Balakshin (2020-09-24) ---
+
+До 1 октября!
+
+
+--- Spark (2020-09-24) ---
+
+А
+
+
+--- Pavel Balakshin (2020-09-24) ---
+
+Классно до 1 октября! А потом ещё класснее: https://www.kp.ru/putevoditel/obrazovanie/osennij-prizyv/
+
+
+--- Anton Changalidis (2020-09-24) ---
+
+те, кто хотел, уже пошли на военную кафедру
+
+
+--- Spark (2020-09-24) ---
+
+Да и шо, я дурак чтоль третий раз перепоступать!
+
+
+--- Anton Changalidis (2020-09-24) ---
+
+уже в сапогах юность встречают
+
+
+--- Alexander B. (2020-09-24) ---
+
+ой да ладно, шанс попасть в армию за один призыв ~1/8
+
+
+--- Pavel Balakshin (2020-09-24) ---
+
+Вы проверяли на себе? =)
+
+
+--- Anatolii Anischenko (2020-09-24) ---
+
+Один раз за 4 года попал)
+
+
+--- Dmitry Tereshchenko (2020-09-24) ---
+
+А есть где ссылка на этот чат?
+
+
+--- Igor 🐱 Jirkov (2020-09-24) ---
+
+?
+
+@itmo_low_level_programming
+
+
+--- Alexander B. (2020-09-24) ---
+
+Я не призывник)
+
+
+--- Dmitry Tereshchenko (2020-09-24) ---
+
+в пк версии не видел ее...
+
+
+--- Igor 🐱 Jirkov (2020-09-24) ---
+
+https://t.me/itmo_low_level_programming
+
+
+--- Eridanus (2020-09-25) ---
+
+@igorjirkov завтра будет лекция?
+
+
+--- Igor 🐱 Jirkov (2020-09-25) ---
+
+Скажу чуть позже. или две лекции в зуме или за выходные подготовлю два видео
+
+
+--- Dawin York (2020-09-25) ---
+
+2
+
+))))
+
+
+--- Anton Changalidis (2020-09-25) ---
+
+А если в зуме, то видео же тоже будет?)
+
+
+--- Igor 🐱 Jirkov (2020-09-25) ---
+
+да, но одно дело видео в реалтайме и (возможно) интерактив и обсуждения, другое — записанные видосы как в видеокурсе
+
+
+--- Anton Changalidis (2020-09-25) ---
+
+да, это правда
+
+
+--- Igor 🐱 Jirkov (2020-09-25) ---
+
+всё-таки в этот раз сделаем лекции в формате "лектор готовит видеозаписи за выходные и присылает"
