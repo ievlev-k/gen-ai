@@ -1,0 +1,9 @@
+{
+  "total_tickets": 15,
+  "gold_evaluated": 15,
+  "pass_rate": 0.1333,
+  "ghost_quote_rate": 2.4667,
+  "hallucination_rate": 0.4667,
+  "auto_solve_rate": 0.4,
+  "avg_steps": 1.6
+}
