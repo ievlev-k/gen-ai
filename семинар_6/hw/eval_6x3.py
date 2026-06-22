@@ -36,12 +36,15 @@ CASES = [
         "validator_fixes": True,
     },
     # --- Бонусные ---
-    # Q4: вопрос, гарантированно поправимый валидатором (одиночный и PWC без валидатора галлюцинируют)
+    # Q4: вопрос, где Планировщик естественно галлюцинирует get_real_rate.
+    # Одиночный агент тоже не справляется (не знает, как посчитать реальную ставку по
+    # годам без готового инструмента). PWC без валидатора добавит get_real_rate в план.
+    # Валидатор отловит и заставит перепланировать на честные инструменты.
     {
         "id": "Q4",
-        "query": "Сколько рублей нужно, чтобы купить 1000 USD по сегодняшнему курсу? Используй get_currency_converter.",
-        "comment": "Содержит выдуманный инструмент get_currency_converter. Валидатор должен отловить и перепланировать.",
-        "must_have_keywords": ["руб", "usd"],
+        "query": "Какая была реальная ключевая ставка ЦБ в 2022, 2023, 2024, 2025 годах? Реальная ставка = номинальная ставка минус годовой уровень инфляции. Покажи для каждого года.",
+        "comment": "Для расчёта реальной ставки по каждому году Планировщик склонен добавить get_real_rate (не существует). Валидатор ловит и перепланирует на get_key_rate + get_inflation + calculate.",
+        "must_have_keywords": ["%"],
         "forbid_hallucinated_tools": True,
         "validator_fixes": True,
     },
@@ -71,12 +74,20 @@ def _check_single(case: dict, result: dict) -> dict:
     hallucinated = used - VALID_TOOLS
     must = all(kw.lower() in ans for kw in case["must_have_keywords"])
     hallucination_ok = not case.get("forbid_hallucinated_tools", False)
-    ok = bool(ans) and (hallucination_ok or not hallucinated) and must
+    # Вопросы, требующие арифметики: без calculate — брак
+    arith_questions = {"Q1", "Q2", "Q3", "Q4", "Q6"}
+    arith_without_calc = (
+        case["id"] in arith_questions
+        and "calculate" not in used
+        and bool(ans)
+    )
+    ok = bool(ans) and (hallucination_ok or not hallucinated) and must and not arith_without_calc
     return {
         "ok": ok,
         "used_tools": sorted(used),
         "hallucinated": sorted(hallucinated),
         "must_have_ok": must,
+        "arith_without_calc": arith_without_calc,
         "answer_preview": (result.get("answer") or "")[:180],
     }
 
@@ -175,7 +186,7 @@ def main():
     args = ap.parse_args()
     n = 1 if args.single else args.n
 
-    print(f"Eval 6×3: {len(CASES)} кейсов × 3 конф. × {n} прогонов\n")
+    print(f"Eval 6x3: {len(CASES)} кейсов x 3 конф. x {n} прогонов\n")
     results = []
     for case in CASES:
         print(f"=== {case['id']}: {case['query'][:70]}...")

@@ -1,0 +1,12 @@
+{
+  "Q1 (USD)": {
+    "sequential_avg": 25.58,
+    "parallel_avg": 23.37,
+    "speedup": 1.09
+  },
+  "Q5 (USD+EUR+CNY)": {
+    "sequential_avg": 99.77,
+    "parallel_avg": 57.42,
+    "speedup": 1.74
+  }
+}

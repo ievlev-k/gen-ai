@@ -1,0 +1,37 @@
+[
+  {
+    "case": "арифметика без calculate",
+    "t0_false_accepts": "0/10",
+    "t0_count": 0,
+    "t07_false_accepts": "1/10",
+    "t07_count": 1
+  },
+  {
+    "case": "выдуманное число",
+    "t0_false_accepts": "1/10",
+    "t0_count": 1,
+    "t07_false_accepts": "0/10",
+    "t07_count": 0
+  },
+  {
+    "case": "несогласованные данные между подвопросами",
+    "t0_false_accepts": "1/10",
+    "t0_count": 1,
+    "t07_false_accepts": "4/10",
+    "t07_count": 4
+  },
+  {
+    "case": "ответ содержит ошибку",
+    "t0_false_accepts": "0/10",
+    "t0_count": 0,
+    "t07_false_accepts": "0/10",
+    "t07_count": 0
+  },
+  {
+    "case": "непокрытая часть вопроса",
+    "t0_false_accepts": "1/10",
+    "t0_count": 1,
+    "t07_false_accepts": "2/10",
+    "t07_count": 2
+  }
+]
